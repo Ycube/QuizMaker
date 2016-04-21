@@ -1,0 +1,22 @@
+{
+  "name": "quizadmin",
+  "version": "1.0.0",
+  "description": "## Introduction",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ycube/QuizMaker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ycube/QuizMaker/issues"
+  },
+  "homepage": "https://github.com/Ycube/QuizMaker",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
