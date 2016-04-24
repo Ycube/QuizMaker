@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Ycube/QuizMaker",
   "dependencies": {
+    "angular": "^1.5.5",
+    "angular-route": "^1.5.5",
     "express": "^4.13.4"
   }
 }
