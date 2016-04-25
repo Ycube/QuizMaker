@@ -6,15 +6,13 @@
         <title>Quiz Admin Interface</title>
         <script src="https://cdn.jsdelivr.net/g/jquery@1.11.0,underscorejs@1.7.0,backbonejs@1.1.2"></script>
         <link rel="stylesheet" href="css/site.css">
-        <script type="text/javascript" src="./node_modules/angular/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <!-- <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script> -->
         <script type="text/javascript" src="app.js"></script>
     </head>
     <body ng-controller="MainController">
         <div class="test">
-            <div ng-repeat="f in quiz">
-                {{f.content}}
-                {{f.a}}
-            </div>
+            <!-- testing area -->
         </div>
         <div id="quiz-interface">
             <h2>Quiz Admin Interface</h2>
@@ -55,14 +53,13 @@
                 <a class="button" href="#">Calculate Possibilities</a>
                 </div>
             </div>
-            <div class="question in questions">
+            <div class="test">
+                <div ng-repeat="qs in quiz">
                 <div class="question">
                     <p>
-                        <span><strong>Question 1</strong></span>
+                        <span><strong>Question # {{ $index + 1 }}</strong></span>
                     </p>
-                    <p>
-                        <input class="question-content" type="text" placeholder="Question Content" />
-                    </p>
+                    <p class="question-content" type="text" placeholder="Question Content">{{ qs.content }}</p>                    
                     <table class="answer-table">
                         <thead>
                             <tr>
@@ -73,24 +70,25 @@
                         <tbody>
                             <tr>
                                 <td>A</td>
-                                <td><input type="text" value="0" /></td>
+                                <td>{{ qs.option.a }}</td>
                             </tr>
                             <tr>
                                 <td>B</td>
-                                <td><input type="text" value="0" /></td>
+                                <td>{{ qs.option.b }}</td>
                             </tr>
                             <tr>
                                 <td>C</td>
-                                <td><input type="text" value="0" /></td>
+                                <td>{{ qs.option.c }}</td>
                             </tr>
                             <tr>
                                 <td>D</td>
-                                <td><input type="text" value="0" /></td>
+                                <td>{{ qs.option.d }}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-            </div> <!-- </div>  -->
+                </div>
+            </div>
         </div>
     </body>
 </html>
