@@ -17,10 +17,10 @@
         <div id="quiz-interface">
             <h2>Quiz Admin Interface</h2>
             <div>
-                <div ng-click="addQuestion()">
+                <form>
                     <div class="question">
                     <p>
-                        <input class="question-content" type="text" placeholder="Question Content" />
+                        <input class="question-content" type="text" placeholder="Question Content" ng-model="content"/>
                     </p>
                     <table class="answer-table">
                         <thead>
@@ -32,26 +32,26 @@
                         <tbody>
                             <tr>
                                 <td>A</td>
-                                <td><input type="text" value="0" /></td>
+                                <td><input type="text" placeholder="0" ng-model="aVal"/></td>
                             </tr>
                             <tr>
                                 <td>B</td>
-                                <td><input type="text" value="0" /></td>
+                                <td><input type="text" placeholder="0" ng-model="bVal"/></td>
                             </tr>
                             <tr>
                                 <td>C</td>
-                                <td><input type="text" value="0" /></td>
+                                <td><input type="text" placeholder="0" ng-model="cVal"/></td>
                             </tr>
                             <tr>
                                 <td>D</td>
-                                <td><input type="text" value="0" /></td>
+                                <td><input type="text" placeholder="0" ng-model="dVal"/></td>
                             </tr>
                         </tbody>
                     </table>
                     </div>
-                <a class="button" href="#">Add Question</a>
-                <a class="button" href="#">Calculate Possibilities</a>
-                </div>
+                    <button class="button" href="#" ng-click="addQuestion()">Add Question</buton>
+                    <button class="button" href="#">Calculate Possibilities</button>
+                </form>
             </div>
             <div class="test">
                 <div ng-repeat="qs in quiz">
