@@ -3,11 +3,10 @@ var quizApp = angular.module('quizApp', []);
 quizApp.controller('MainController', ['$scope', function($scope) {
 
   $scope.quiz = [];
-  $scope.question = {};
 
   $scope.addQuestion = function() {
     
-    $scope.quiz.push({'content': this.content, 'option' : { 'a': this.aVal, 'b': this.bVal, 'c': this.cVal, 'd': this.dVal }});    
+    $scope.quiz.push({'content': this.content, 'option' : { 'a': parseInt(this.aVal) || 0, 'b': parseInt(this.bVal) || 0, 'c': parseInt(this.cVal) || 0, 'd': parseInt(this.dVal) || 0 }});    
     $scope.content = "";
     $scope.aVal = "";
     $scope.bVal = "";
@@ -20,7 +19,7 @@ quizApp.controller('MainController', ['$scope', function($scope) {
   };
 
 
-  $scope.calculatePossibilities = function() {
+  $scope.calculatePossibilities = function(quizArray) {
   var possibilities = [];
   
     (function subRoutine(index, sumOfScores) {
